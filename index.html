@@ -290,6 +290,131 @@ h1, h2, h3, p { margin-top: 0; }
 .focus-item p { margin-bottom: 0; color: var(--muted); font-size: .72rem; line-height: 1.5; }
 @media (max-width: 980px) { .dashboard-hero,.dashboard-grid { grid-template-columns: 1fr; } .kpi-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media (max-width: 650px) { .dashboard-hero { margin-top: 16px; padding: 29px 21px; border-radius: 25px; } .dashboard-hero h1 { max-width: 13ch; font-size: clamp(2.35rem,12vw,3.75rem); } .profile-mini-grid,.kpi-grid,.focus-grid { grid-template-columns: 1fr; } .latest-summary { grid-template-columns: 1fr; } .score-ring { width: 104px; height: 104px; } .topic-row { grid-template-columns: 1fr auto; } .topic-row .progress-track { grid-column: 1/-1; grid-row: 2; } }
+
+
+/* Professional interface finishing pass */
+html { color-scheme: light; }
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+main, section, article, aside, nav { min-width: 0; }
+.topbar {
+  border-color: rgba(203, 213, 225, .9);
+  box-shadow: 0 14px 38px rgba(15, 23, 42, .075);
+}
+.brand-copy strong { letter-spacing: -.025em; }
+.nav a, .nav .logout-button { letter-spacing: -.01em; }
+.card { border-color: rgba(203, 213, 225, .82); }
+.developer-notes {
+  box-shadow: 0 10px 28px rgba(127, 29, 29, .06);
+}
+.developer-notes > strong {
+  margin-bottom: 10px;
+  font-size: .88rem;
+}
+.developer-notes ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.developer-notes li { padding-left: 2px; }
+.developer-notes b { color: #7f1d1d; }
+.developer-notes code {
+  padding: 1px 5px;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  background: rgba(255,255,255,.72);
+  color: #7f1d1d;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: .92em;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 1120px) and (min-width: 901px) {
+  .nav a, .nav .logout-button { padding-inline: 10px; font-size: .78rem; }
+}
+@media (max-width: 900px) {
+  .nav { max-height: min(70vh, 430px); overflow-y: auto; overscroll-behavior: contain; }
+}
+@media (max-width: 480px) {
+  .shell { width: min(100% - 16px, 1220px); }
+  .topbar { padding-inline: 10px; }
+  .logo { width: 42px; height: 42px; border-radius: 14px; }
+  .developer-notes { margin-top: 26px; border-radius: 15px; font-size: .74rem; }
+}
+@media (forced-colors: active) {
+  .topbar, .card, .developer-notes { border: 1px solid CanvasText; }
+  .nav a.active, .primary-button, .card-action, .view-button { forced-color-adjust: none; }
+}
+
+
+.profile-card { padding: 23px; }
+.profile-head > div > strong span { display: inline; }
+.profile-clock {
+  display: grid;
+  grid-template-columns: minmax(0,1.25fr) minmax(0,.75fr);
+  gap: 9px;
+  margin-top: 14px;
+}
+.clock-cell {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 15px;
+  background: rgba(255,255,255,.09);
+}
+.clock-cell span, .clock-cell time { display: block; }
+.clock-cell span {
+  margin-bottom: 5px;
+  color: rgba(255,255,255,.62);
+  font-size: .61rem;
+  font-weight: 800;
+  letter-spacing: .065em;
+  text-transform: uppercase;
+}
+.clock-cell time {
+  color: #fff;
+  font-size: .79rem;
+  font-weight: 850;
+  line-height: 1.35;
+}
+.clock-cell:last-child time {
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+.kpi-icon svg { width: 19px; height: 19px; stroke-width: 1.9; }
+.kpi-card {
+  position: relative;
+  overflow: hidden;
+  border-top: 3px solid #d8e5fb;
+}
+.kpi-card::after {
+  content: "";
+  position: absolute;
+  right: -42px;
+  bottom: -52px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(23,59,130,.045);
+  pointer-events: none;
+}
+.dashboard-panel { box-shadow: 0 12px 34px rgba(15,23,42,.07); }
+.subject-score span { max-width: 155px; line-height: 1.35; }
+@media (max-width: 760px) {
+  .profile-clock { grid-template-columns: 1fr; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .kpi-grid { grid-template-columns: 1fr; }
+  .profile-card { padding: 18px; }
+  .clock-cell:last-child time { font-size: .94rem; }
+}
+
 </style>
 </head>
 <body data-page="dashboard">
@@ -314,18 +439,19 @@ h1, h2, h3, p { margin-top: 0; }
 
 <main>
   <section class="dashboard-hero" aria-labelledby="pageTitle">
-    <div><div class="eyebrow">Student dashboard</div><h1 id="pageTitle"><span data-greeting>Hello</span>, <span data-username>Learner</span>.</h1><p class="lead">Review recent exam results, monitor progress across all four subjects and see the areas that need attention next.</p></div>
-    <aside class="profile-card" aria-label="Learner snapshot">
-      <div class="profile-head"><span class="profile-avatar" data-user-initials>L</span><div><strong data-username>Learner</strong><span>Signed-in learner account</span></div></div>
-      <div class="profile-mini-grid"><div class="profile-mini"><strong data-hero-attempts>0</strong><span>exam attempts recorded</span></div><div class="profile-mini"><strong data-hero-latest>—</strong><span>latest exam result</span></div><div class="profile-mini"><strong data-hero-improvement>—</strong><span>average improvement</span></div><div class="profile-mini"><strong data-hero-focus>—</strong><span>current priority topic</span></div></div>
+    <div><div class="eyebrow">Student dashboard</div><h1 id="pageTitle"><span data-greeting>Hello</span>, <span data-username>CK223</span>.</h1><p class="lead">Review recent exam results, monitor progress across all four subjects and see the areas that need attention next.</p></div>
+    <aside class="profile-card" aria-label="Learner and current UK time">
+      <div class="profile-head"><span class="profile-avatar" data-user-initials>CK</span><div><strong>Learner signed in as <span data-username>CK223</span></strong><span>11+ learner account</span></div></div>
+      <div class="profile-clock" aria-label="Current date and time in the United Kingdom"><div class="clock-cell"><span>Today</span><time data-live-date datetime="2026-08-11">Tuesday, 11 August 2026</time></div><div class="clock-cell"><span>UK time</span><time data-live-time datetime="2026-08-11T14:00:00+01:00">14:00:00 BST</time></div></div>
+      <div class="profile-mini-grid"><div class="profile-mini"><strong data-hero-attempts>0</strong><span>exam attempts recorded</span></div><div class="profile-mini"><strong data-hero-latest>—</strong><span>latest exam result</span></div><div class="profile-mini"><strong data-hero-improvement>—</strong><span>average score change</span></div><div class="profile-mini"><strong data-hero-focus>—</strong><span>current priority topic</span></div></div>
     </aside>
   </section>
 
   <section class="kpi-grid" aria-label="Exam summary">
-    <article class="card kpi-card"><span class="kpi-icon">NP</span><strong data-net-performance>—</strong><span>Net performance across all available exam marks</span></article>
-    <article class="card kpi-card"><span class="kpi-icon">Δ</span><strong data-net-improvement>—</strong><span>Average first-to-latest movement across the four subjects</span></article>
-    <article class="card kpi-card"><span class="kpi-icon">LS</span><strong data-latest-score>—</strong><span>Latest raw exam score and subject</span></article>
-    <article class="card kpi-card"><span class="kpi-icon">BR</span><strong data-best-result>—</strong><span>Highest recorded exam percentage</span></article>
+    <article class="card kpi-card"><span class="kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-7M22 19V3"></path></svg></span><strong data-net-performance>—</strong><span>Overall score across all completed exams</span></article>
+    <article class="card kpi-card"><span class="kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-9"></path><path d="M15 6h6v6"></path></svg></span><strong data-net-improvement>—</strong><span>Average first-to-latest score change</span></article>
+    <article class="card kpi-card"><span class="kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M9 7h6M9 12h6M9 17h4"></path></svg></span><strong data-latest-score>—</strong><span>Most recent raw exam score</span></article>
+    <article class="card kpi-card"><span class="kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4"></path><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z"></path><path d="M7 6H4v1a4 4 0 0 0 4 4M17 6h3v1a4 4 0 0 1-4 4"></path></svg></span><strong data-best-result>—</strong><span>Highest recorded exam score</span></article>
   </section>
 
   <section class="section dashboard-grid" aria-label="Current exam evidence">
@@ -348,7 +474,13 @@ h1, h2, h3, p { margin-top: 0; }
     </div>
   </section>
 </main>
-<aside class="developer-notes"><strong>Developer notes — do not include on real pages</strong><p>The dashboard body contains no duplicate Practice or Exams launch buttons because those routes already appear in the top navigation. It reads compatible exam records when available and otherwise uses sample records for this prototype. All summary values are calculated with deterministic JavaScript. Every Log out control points directly to https://mathbase1.github.io/11plus-pem/. Remove this box before production.</p></aside>
+<aside class="developer-notes" aria-label="Developer notes"><strong>Developer notes — do not include on real pages</strong><ul>
+  <li><b>Data entering this page:</b> the signed-in learner profile, including the account username, plus completed exam-attempt records. Each attempt should supply <code>id</code>, <code>date</code>, <code>subject</code>, <code>paper</code>, <code>paperId</code>, <code>score</code>, <code>total</code>, <code>answered</code>, <code>durationMinutes</code>, <code>allocatedMinutes</code>, <code>topics</code>, <code>strengths</code>, <code>areasToImprove</code>, <code>feedback</code> and, where available, question-level review data.</li>
+  <li><b>Current source:</b> the username is read from <code>localStorage.mathbase11PlusLearner</code>. Exam records are read from <code>window.MATHBASE_EXAM_ATTEMPTS</code> or compatible arrays found in browser storage; the included sample records are used only when no compatible records exist. In production, load both the account profile and exam records from the authenticated Cloudways API/database.</li>
+  <li><b>Required links:</b> the header links only to Dashboard, Practice, Exams, My Performance and Log out. There are intentionally no duplicate Practice or Exams launch buttons in the dashboard body. Log out returns to <code>https://mathbase1.github.io/11plus-pem/</code>.</li>
+  <li><b>How saved student data updates this page:</b> on page load, JavaScript recalculates overall score, average first-to-latest score change, latest result, best result, subject summaries and topic priorities from the latest saved attempt set. The UK date and clock refresh every second using the <code>Europe/London</code> time zone, which handles GMT/BST clock changes automatically. Production should re-fetch after a new exam is saved or refresh the view through an application event.</li>
+  <li><b>Production calculation rules:</b> overall performance is total raw marks earned divided by total marks available; subject change is latest percentage minus first percentage; topic priorities use the average stored topic percentage. These are deterministic calculations and do not use AI. Remove the sample fallback and this red box before release.</li>
+</ul></aside>
 </div>
   <script>
 const MATHBASE_ROUTES = Object.freeze({"dashboard": "https://mathbase1.github.io/11-plus-dashboard/", "practice": "https://mathbase1.github.io/11-plus-practice-menu/", "exams": "https://mathbase1.github.io/11-plus-exams-menu/", "performance": "https://mathbase1.github.io/data/", "login": "https://mathbase1.github.io/11plus-pem/", "mathsPractice": "https://mathbase1.github.io/11plus-practice-quest/", "englishPractice": "https://mathbase1.github.io/eleven-plus-English-practice/", "verbalPractice": "https://mathbase1.github.io/eleven-plus-verbal-reasoning-practice/", "nonverbalPractice": "https://mathbase1.github.io/nvr-prac/", "mathsExam": "https://mathbase1.github.io/11plus-exam/", "englishExam": "https://mathbase1.github.io/eleven-plus-English-exam/", "verbalExam": "https://mathbase1.github.io/eleven-plus-verbal-reasoning-exam/", "nonverbalExam": "https://mathbase1.github.io/nvr-exam/"});
@@ -377,7 +509,15 @@ function logOutMathBase(event) {
 }
 
 function greetingForCurrentTime() {
-  const hour = new Date().getHours();
+  let hour = new Date().getHours();
+  try {
+    const part = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Europe/London",
+      hour: "2-digit",
+      hour12: false
+    }).formatToParts(new Date()).find((item) => item.type === "hour");
+    if (part) hour = Number(part.value) % 24;
+  } catch (error) { /* Use the device hour when time-zone formatting is unavailable. */ }
   if (hour < 12) return "Good morning";
   if (hour < 18) return "Good afternoon";
   return "Good evening";
@@ -385,11 +525,15 @@ function greetingForCurrentTime() {
 
 function hydrateCommonUI() {
   const profile = readMathBaseProfile();
-  const username = String(profile.username || profile.name || "Learner");
+  const username = String(profile.username || profile.name || "CK223");
   document.querySelectorAll("[data-username]").forEach((element) => { element.textContent = username; });
   document.querySelectorAll("[data-greeting]").forEach((element) => { element.textContent = greetingForCurrentTime(); });
   document.querySelectorAll("[data-user-initials]").forEach((element) => {
-    const letters = username.split(/[\s._-]+/).filter(Boolean).slice(0,2).map((part) => part.charAt(0).toUpperCase()).join("") || "L";
+    const parts = username.split(/[\s._-]+/).filter(Boolean);
+    const compact = username.replace(/[^a-z0-9]/gi, "").toUpperCase();
+    const letters = parts.length > 1
+      ? parts.slice(0, 2).map((part) => part.charAt(0).toUpperCase()).join("")
+      : compact.slice(0, 2) || "CK";
     element.textContent = letters;
   });
 }
@@ -550,7 +694,13 @@ function percentageOf(attempt) { return attempt && attempt.total ? (Number(attem
 function average(values) { return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : 0; }
 function round(value, places = 0) { const factor = 10 ** places; return Math.round((Number(value) + Number.EPSILON) * factor) / factor; }
 function clamp(value, min, max) { return Math.min(max, Math.max(min, value)); }
-function signed(value, suffix = " pp") { const numeric = round(value, 1); if (!Number.isFinite(numeric)) return "—"; return `${numeric > 0 ? "+" : ""}${numeric}${suffix}`; }
+function signed(value) {
+  const numeric = round(value, 1);
+  if (!Number.isFinite(numeric)) return "—";
+  if (numeric === 0) return "No change";
+  const magnitude = Math.abs(numeric);
+  return `${numeric > 0 ? "Up" : "Down"} ${magnitude} percentage ${magnitude === 1 ? "point" : "points"}`;
+}
 function formatDate(value, short = false) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return "—";
@@ -617,6 +767,37 @@ function escapeHtml(value) {
 }
 window.MathBasePerformance = { loadExamAttempts, normaliseAttempt, overallMetrics, subjectAttemptMetrics, percentageOf };
 
+
+function initialiseLondonClock() {
+  const dateElement = document.querySelector("[data-live-date]");
+  const timeElement = document.querySelector("[data-live-time]");
+  if (!dateElement || !timeElement) return;
+  const dateFormatter = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/London",
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
+  const timeFormatter = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/London",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+    timeZoneName: "short"
+  });
+  const update = () => {
+    const now = new Date();
+    dateElement.textContent = dateFormatter.format(now);
+    timeElement.textContent = timeFormatter.format(now);
+    dateElement.dateTime = now.toISOString().slice(0, 10);
+    timeElement.dateTime = now.toISOString();
+  };
+  update();
+  window.setInterval(update, 1000);
+}
+
 function renderDashboard() {
   const attempts = loadExamAttempts();
   const overall = overallMetrics(attempts);
@@ -665,7 +846,7 @@ function renderDashboard() {
   document.querySelector("[data-strong-message]").textContent = overall.strongestTopic ? `${overall.strongestTopic.topic} is the strongest recorded topic at ${round(overall.strongestTopic.value)}%.` : "A strongest topic will appear after exam data is available.";
   document.querySelector("[data-pace-message]").textContent = Number.isFinite(overall.averageTime) ? `The average recorded exam time is ${formatDuration(overall.averageTime)}. Keep accuracy secure before increasing speed.` : "Timing data will appear when exam records include duration.";
 }
-document.addEventListener("DOMContentLoaded", renderDashboard);
+document.addEventListener("DOMContentLoaded", () => { initialiseLondonClock(); renderDashboard(); });
 </script>
 </body>
 </html>
