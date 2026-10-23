@@ -1,13 +1,11 @@
-
-
 <!doctype html>
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b214a">
-  <meta name="description" content="A clean 11+ learner dashboard showing concise exam performance evidence and priorities.">
-  <title>11+ Dashboard | MathBase Prep</title>
+  <meta name="description" content="Explore the MathBase Prep 11+ dashboard with illustrative sample scores, progress and revision priorities. This is a sample product preview, not a real learner record.">
+  <title>11+ Dashboard Preview | MathBase Prep</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -189,22 +187,6 @@ h1, h2, h3, p { margin-top: 0; }
 .primary-button svg { flex: 0 0 auto; width: 17px; height: 17px; }
 .primary-button:hover { transform: translateY(-2px); background: var(--navy-dark); box-shadow: 0 15px 32px rgba(23,59,130,.26); }
 
-.developer-notes {
-  margin-top: 34px;
-  padding: 18px 20px;
-  border: 2px dashed #dc2626;
-  border-radius: 18px;
-  background: #fff1f2;
-  color: #7f1d1d;
-  font-size: .78rem;
-  line-height: 1.58;
-}
-.developer-notes strong { display: block; margin-bottom: 5px; color: #991b1b; font-size: .82rem; letter-spacing: .01em; }
-.developer-notes p { margin: 0 0 8px; }
-.developer-notes p:last-child { margin-bottom: 0; }
-.developer-notes ul { margin: 8px 0 0; padding-left: 20px; }
-.developer-notes li { margin: 4px 0; }
-.developer-notes b { color: #7f1d1d; }
 
 @media (max-width: 900px) {
   .topbar { position: relative; top: auto; }
@@ -231,7 +213,6 @@ h1, h2, h3, p { margin-top: 0; }
   .topbar { min-height: 64px; border-radius: 18px; }
   .brand-copy span { display: none; }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 9px; }
-  .developer-notes { padding: 16px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -320,45 +301,41 @@ h1, h2, h3, p { margin-top: 0; }
 
 <main>
   <section class="dashboard-hero" aria-labelledby="pageTitle">
-    <div><div class="eyebrow">Student dashboard</div><h1 id="pageTitle"><span data-greeting>Hello</span>, <span data-username>Learner</span>.</h1><p class="lead">Review recent exam results, monitor progress across all four subjects and see the areas that need attention next.</p></div>
-    <aside class="profile-card" aria-label="Learner snapshot">
-      <div class="profile-head"><span class="profile-avatar" data-user-initials>L</span><div><strong data-username>Learner</strong><span>Signed-in learner account</span></div></div>
-      <div class="profile-mini-grid"><div class="profile-mini"><strong data-hero-attempts>0</strong><span>exam attempts recorded</span></div><div class="profile-mini"><strong data-hero-latest>—</strong><span>latest exam result</span></div><div class="profile-mini"><strong data-hero-improvement>—</strong><span>average improvement</span></div><div class="profile-mini"><strong data-hero-focus>—</strong><span>current priority topic</span></div></div>
+    <div><div class="eyebrow">Sample product preview</div><h1 id="pageTitle"><span data-greeting>Hello</span>, <span data-username>Learner</span>.</h1><p class="lead">Explore example exam results, progress across all four subjects and revision priorities. <strong>All scores, dates, timings and progress shown are sample data, not real learner results.</strong></p></div>
+    <aside class="profile-card" aria-label="Sample learner snapshot">
+      <div class="profile-head"><span class="profile-avatar" data-user-initials>L</span><div><strong data-username>Learner</strong><span>Preview profile · sample data</span></div></div>
+      <div class="profile-mini-grid"><div class="profile-mini"><strong data-hero-attempts>0</strong><span>sample exam attempts</span></div><div class="profile-mini"><strong data-hero-latest>—</strong><span>latest sample result</span></div><div class="profile-mini"><strong data-hero-improvement>—</strong><span>sample average improvement</span></div><div class="profile-mini"><strong data-hero-focus>—</strong><span>example priority topic</span></div></div>
     </aside>
   </section>
 
-  <section class="kpi-grid" aria-label="Exam summary">
-    <article class="card kpi-card"><span class="kpi-icon">NP</span><strong data-net-performance>—</strong><span>Net performance across all available exam marks</span></article>
-    <article class="card kpi-card"><span class="kpi-icon">Δ</span><strong data-net-improvement>—</strong><span>Average first-to-latest movement across the four subjects</span></article>
-    <article class="card kpi-card"><span class="kpi-icon">LS</span><strong data-latest-score>—</strong><span>Latest raw exam score and subject</span></article>
-    <article class="card kpi-card"><span class="kpi-icon">BR</span><strong data-best-result>—</strong><span>Highest recorded exam percentage</span></article>
+  <section class="kpi-grid" aria-label="Sample exam summary">
+    <article class="card kpi-card"><span class="kpi-icon">NP</span><strong data-net-performance>—</strong><span>Net performance across the sample exam marks</span></article>
+    <article class="card kpi-card"><span class="kpi-icon">Δ</span><strong data-net-improvement>—</strong><span>Sample first-to-latest movement across the four subjects</span></article>
+    <article class="card kpi-card"><span class="kpi-icon">LS</span><strong data-latest-score>—</strong><span>Latest sample exam score</span></article>
+    <article class="card kpi-card"><span class="kpi-icon">BR</span><strong data-best-result>—</strong><span>Highest sample exam percentage</span></article>
   </section>
 
-  <section class="section dashboard-grid" aria-label="Current exam evidence">
+  <section class="section dashboard-grid" aria-label="Sample exam evidence">
     <article class="card dashboard-panel">
-      <div class="panel-head"><div><div class="section-kicker">Latest evidence</div><h2>Most recent exam snapshot</h2><p>The latest stored raw score, timing and topic breakdown.</p></div><span class="pill blue" data-latest-date>—</span></div>
+      <div class="panel-head"><div><div class="section-kicker">Sample results</div><h2>Example exam snapshot</h2><p>Illustrative raw score, timing and topic breakdown.</p></div><span class="pill blue" data-latest-date>—</span></div>
       <div id="latestExamPanel"></div>
     </article>
     <article class="card dashboard-panel">
-      <div class="panel-head"><div><div class="section-kicker">Four subjects</div><h2>Subject overview</h2><p>Latest score and first-to-latest movement for each exam component.</p></div></div>
+      <div class="panel-head"><div><div class="section-kicker">Four subjects</div><h2>Subject overview</h2><p>Sample scores and first-to-latest movement for each exam component.</p></div></div>
       <div class="subject-list" id="dashboardSubjectList"></div>
     </article>
   </section>
 
   <section class="section" aria-labelledby="focusTitle">
-    <div class="section-heading"><div><div class="section-kicker">Your next steps</div><h2 id="focusTitle">Turn recent results into focused revision</h2><p>Prioritise weaker topics, maintain secure areas and balance accuracy with pace before the next exam attempt.</p></div></div>
+    <div class="section-heading"><div><div class="section-kicker">Example next steps</div><h2 id="focusTitle">See how results guide focused revision</h2><p>These example priorities show how results can guide revision. They are based on sample data, not your own performance.</p></div></div>
     <div class="focus-grid">
-      <article class="card focus-item"><span class="focus-number">1</span><strong>Work on the lowest topic first</strong><p data-focus-message>Loading the current priority from exam evidence…</p></article>
-      <article class="card focus-item"><span class="focus-number">2</span><strong>Keep the strongest area active</strong><p data-strong-message>Loading the strongest recorded topic…</p></article>
-      <article class="card focus-item"><span class="focus-number">3</span><strong>Separate accuracy from pace</strong><p data-pace-message>Loading the recent timing signal…</p></article>
+      <article class="card focus-item"><span class="focus-number">1</span><strong>Work on the lowest topic first</strong><p data-focus-message>Loading an example priority from the sample results…</p></article>
+      <article class="card focus-item"><span class="focus-number">2</span><strong>Keep the strongest area active</strong><p data-strong-message>Loading the strongest topic in the sample…</p></article>
+      <article class="card focus-item"><span class="focus-number">3</span><strong>Separate accuracy from pace</strong><p data-pace-message>Loading the sample timing summary…</p></article>
     </div>
   </section>
 </main>
-<aside class="developer-notes"><strong>Developer notes — do not include on real pages</strong>
-<p><b>Prototype inputs:</b> the page reads the locally displayed username and compatible browser-stored exam records; when none are available it uses labelled sample attempts so the dashboard can be reviewed visually.</p>
-<p><b>Suggested production data contract:</b> identify the learner from the authenticated server session, not from a client-supplied learner ID. Load a dashboard response containing the username or account alias, total exam attempts, latest attempt, best result, first-to-latest subject changes, topic aggregates, timing metrics and the last-updated timestamp.</p>
-<p><b>Update flow:</b> each completed exam should be saved by the backend before the results screen confirms completion. The dashboard should refetch after login, after a completed exam, on manual refresh and whenever the stored result version changes. All calculations must use persisted exam records belonging to the signed-in account.</p>
-<p><b>Production access:</b> protect this route on the server. Logout must invalidate the real session and return to the production login route. The current GitHub links are prototype navigation only, not production requirements.</p></aside>
+
 </div>
   <script>
 const MATHBASE_ROUTES = Object.freeze({"dashboard": "https://mathbase1.github.io/11-plus-dashboard/", "practice": "https://mathbase1.github.io/11-plus-practice-menu/", "exams": "https://mathbase1.github.io/11-plus-exams-menu/", "performance": "https://mathbase1.github.io/data/", "login": "https://mathbase1.github.io/11plus-pem/", "mathsPractice": "https://mathbase1.github.io/11plus-practice-quest/", "englishPractice": "https://mathbase1.github.io/eleven-plus-English-practice/", "verbalPractice": "https://mathbase1.github.io/eleven-plus-verbal-reasoning-practice/", "nonverbalPractice": "https://mathbase1.github.io/nvr-prac/", "mathsExam": "https://mathbase1.github.io/11plus-exam/", "englishExam": "https://mathbase1.github.io/eleven-plus-English-exam/", "verbalExam": "https://mathbase1.github.io/eleven-plus-verbal-reasoning-exam/", "nonverbalExam": "https://mathbase1.github.io/nvr-exam/"});
@@ -532,28 +509,12 @@ function collectPossibleAttemptArrays(parsed) {
 }
 
 function loadExamAttempts() {
-  const live = [];
-  try {
-    if (Array.isArray(window.MATHBASE_EXAM_ATTEMPTS)) {
-      window.MATHBASE_EXAM_ATTEMPTS.forEach((raw, index) => { const item = normaliseAttempt(raw, index, "injected"); if (item) live.push(item); });
-    }
-    for (let keyIndex = 0; keyIndex < localStorage.length; keyIndex += 1) {
-      const key = localStorage.key(keyIndex);
-      if (!key) continue;
-      let parsed;
-      try { parsed = JSON.parse(localStorage.getItem(key)); } catch (error) { continue; }
-      collectPossibleAttemptArrays(parsed).forEach((array) => {
-        array.forEach((raw, index) => { const item = normaliseAttempt(raw, index, key); if (item) live.push(item); });
-      });
-    }
-  } catch (error) { /* Sample records remain available. */ }
-  const unique = new Map();
-  live.forEach((attempt) => {
-    const signature = attempt.id || [attempt.date, attempt.subject, attempt.score, attempt.total, attempt.paper].join("|");
-    if (!unique.has(signature)) unique.set(signature, attempt);
-  });
-  const attempts = unique.size ? Array.from(unique.values()) : DEMO_ATTEMPTS.map((item) => ({ ...item }));
-  return attempts.sort((a, b) => new Date(a.date) - new Date(b.date));
+  return DEMO_ATTEMPTS.map((item) => ({
+    ...item,
+    topics: { ...item.topics },
+    areasToImprove: [...item.areasToImprove],
+    strengths: [...item.strengths]
+  })).sort((a, b) => new Date(a.date) - new Date(b.date));
 }
 
 function percentageOf(attempt) { return attempt && attempt.total ? (Number(attempt.score) / Number(attempt.total)) * 100 : 0; }
@@ -644,7 +605,7 @@ function renderDashboard() {
 
   const latestPanel = document.getElementById("latestExamPanel");
   if (!latest) {
-    latestPanel.innerHTML = '<p>No completed exam attempts are available yet.</p>';
+    latestPanel.innerHTML = '<p>No sample exam attempts are available.</p>';
   } else {
     const config = SUBJECTS[latest.subject];
     const pct = round(percentageOf(latest));
@@ -655,9 +616,9 @@ function renderDashboard() {
     latestPanel.innerHTML = `
       <div class="latest-summary">
         <div class="score-ring" style="--value:${pct}"><strong>${pct}%</strong></div>
-        <div class="latest-copy"><h3>${escapeHtml(config.name)} Exam Simulation</h3><p>${round(latest.score)} out of ${round(latest.total)} · ${formatDuration(latest.durationMinutes)}</p><div class="latest-meta"><span class="pill blue">${escapeHtml(latest.paperId)}</span><span class="pill ${change >= 0 ? "good" : "warn"}">${previous ? signed(change) + " from previous" : "First recorded attempt"}</span></div></div>
+        <div class="latest-copy"><h3>${escapeHtml(config.name)} Exam Simulation</h3><p>${round(latest.score)} out of ${round(latest.total)} · ${formatDuration(latest.durationMinutes)}</p><div class="latest-meta"><span class="pill blue">${escapeHtml(latest.paperId)}</span><span class="pill ${change >= 0 ? "good" : "warn"}">${previous ? signed(change) + " from previous sample" : "First sample attempt"}</span></div></div>
       </div>
-      <div class="topic-list">${topicRows || '<p>No topic breakdown was stored for this attempt.</p>'}</div>`;
+      <div class="topic-list">${topicRows || '<p>No topic breakdown is included for this sample attempt.</p>'}</div>`;
   }
 
   const subjectList = document.getElementById("dashboardSubjectList");
@@ -666,14 +627,14 @@ function renderDashboard() {
     const status = statusForPercentage(metrics.latestPercentage);
     return `<div class="subject-row" style="--accent:${config.accent};--soft:${config.soft}">
       <span class="subject-badge">${config.short}</span>
-      <span class="subject-copy"><strong>${config.name}</strong><span>${metrics.list.length} exam attempt${metrics.list.length === 1 ? "" : "s"}</span></span>
+      <span class="subject-copy"><strong>${config.name}</strong><span>${metrics.list.length} sample attempt${metrics.list.length === 1 ? "" : "s"}</span></span>
       <span class="subject-score"><strong>${metrics.list.length ? round(metrics.latestPercentage) + "%" : "—"}</strong><span style="color:${metrics.improvement >= 0 ? "#047857" : "#b42318"}">${metrics.list.length > 1 ? signed(metrics.improvement) : status.label}</span></span>
     </div>`;
   }).join("");
 
-  document.querySelector("[data-focus-message]").textContent = overall.weakestTopic ? `${overall.weakestTopic.topic} is currently the lowest combined topic average at ${round(overall.weakestTopic.value)}%.` : "Complete an exam to establish a topic priority.";
-  document.querySelector("[data-strong-message]").textContent = overall.strongestTopic ? `${overall.strongestTopic.topic} is the strongest recorded topic at ${round(overall.strongestTopic.value)}%.` : "A strongest topic will appear after exam data is available.";
-  document.querySelector("[data-pace-message]").textContent = Number.isFinite(overall.averageTime) ? `The average recorded exam time is ${formatDuration(overall.averageTime)}. Keep accuracy secure before increasing speed.` : "Timing data will appear when exam records include duration.";
+  document.querySelector("[data-focus-message]").textContent = overall.weakestTopic ? `In this sample, ${overall.weakestTopic.topic} has the lowest combined topic average at ${round(overall.weakestTopic.value)}%.` : "An example topic priority will appear with sample results.";
+  document.querySelector("[data-strong-message]").textContent = overall.strongestTopic ? `In this sample, ${overall.strongestTopic.topic} is the strongest topic at ${round(overall.strongestTopic.value)}%.` : "An example strongest topic will appear with sample results.";
+  document.querySelector("[data-pace-message]").textContent = Number.isFinite(overall.averageTime) ? `The sample average exam time is ${formatDuration(overall.averageTime)}. This illustrates how accuracy and pace can be reviewed together.` : "Example timings will appear with sample results.";
 }
 document.addEventListener("DOMContentLoaded", renderDashboard);
 </script>
